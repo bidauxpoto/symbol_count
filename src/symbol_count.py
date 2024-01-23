@@ -7,8 +7,6 @@ from optparse import OptionParser
 from os.path import basename
 from sys import argv, exit, stdin
 
-def safe_rstrip(string):
-    line=line.rstrip("\r\n")
 
 def collect(symbols):
 	counts = {}
@@ -33,11 +31,11 @@ def main():
 	if options.double and mode == 'freq':
 		exit("Double option only supported for symbol_count.")
 
-	counts, total = collect(safe_rstrip(l) for l in stdin)
+	counts, total = collect(l.rstrip("\r\n") for l in stdin)
 	if options.double:
 		counts, total = collect(counts.itervalues())
 
-	for symbol in sorted(counts.iterkeys()):
+	for symbol in sorted(counts.keys()):
 		count = counts[symbol]
 		if mode == 'count':
 			if options.reverse:
