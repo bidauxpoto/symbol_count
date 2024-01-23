@@ -33,7 +33,7 @@ def main():
 
 	counts, total = collect(l.rstrip("\r\n") for l in stdin)
 	if options.double:
-		counts, total = collect(counts.itervalues())
+		counts, total = collect(counts.values())
 
 	for symbol in sorted(counts.keys()):
 		count = counts[symbol]
