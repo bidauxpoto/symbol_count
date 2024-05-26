@@ -10,10 +10,11 @@ Symbol_Count is a power tool that provide the count (or frequency) of each symbo
 ```
 symbol_count [--reverse|-r] [--double|-d] [--normalize|-n] <SYMBOL
 
-    --help|-h: print help message and exit
-    --reverse|-r: print count before the symbol
-    --double|-d: print the occurences (counts) of count values (same as: symbol_count | cut -f 2 | symbol_count)
-    --normalize|-n: output fraction instead of count
+Options:
+    -h, --help: print help message and exit
+    -r, --reverse: print count before the symbol
+    -d, --double: print the occurences (counts) of count values (same as: symbol_count | cut -f 2 | symbol_count)
+    -n, --normalize: output fraction instead of count
 
 SYMBOL: multi-row input file, each row is considered a symbol
 ```
